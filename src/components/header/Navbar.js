@@ -87,7 +87,7 @@ const Navbar = () => {
               </Button.Content>
             </Button>
             <span className="mr-3 line">|</span>
-            <a href="/daftar">
+            <a href="/login">
               <button className="btn-auth">Masuk / Daftar</button>
             </a>
           </div>

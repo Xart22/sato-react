@@ -26,7 +26,7 @@ const Register = () => {
       if (password1 === password2) {
         setFormData({ ...formData, textChange: "Submitting" });
         axios
-          .post(`${process.env.REACT_APP_API}/register`, {
+          .post(`http://localhost:5000/api/auth/register`, {
             username,
             email,
             password: password1,
@@ -106,6 +106,7 @@ const Register = () => {
                 placeholder="Password"
                 onChange={handleChange("password1")}
                 value={password1}
+                type="password"
               />
             </Form.Field>
             <Form.Field>
@@ -114,6 +115,7 @@ const Register = () => {
                 placeholder="Confrim Password"
                 onChange={handleChange("password2")}
                 value={password2}
+                type="password"
               />
             </Form.Field>
             <Form.Field>

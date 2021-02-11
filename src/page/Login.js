@@ -22,43 +22,39 @@ const Register = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (username && email && password1) {
-      if (password1 === password2) {
-        setFormData({ ...formData, textChange: "Submitting" });
-        axios
-          .post(`${process.env.REACT_APP_API}/register`, {
-            username,
-            email,
-            password: password1,
-            passwordVertif: password2,
-          })
-          .then((res) => {
-            setFormData({
-              ...formData,
-              username: "",
-              email: "",
-              password1: "",
-              password2: "",
-              textChange: "Submitted",
-            });
-
-            toast.success(res.data.message);
-          })
-          .catch((err) => {
-            setFormData({
-              ...formData,
-              username: "",
-              email: "",
-              password1: "",
-              password2: "",
-              textChange: "Daftar",
-            });
-            console.log(err.response);
-            toast.error(err.response);
+    if (username && password1) {
+      setFormData({ ...formData, textChange: "Submitting" });
+      axios
+        .post(`http://localhost:5000/api/auth/login`, {
+          username,
+          email,
+          password: password1,
+          passwordVertif: password2,
+        })
+        .then((res) => {
+          setFormData({
+            ...formData,
+            username: "",
+            email: "",
+            password1: "",
+            password2: "",
+            textChange: "Submitted",
           });
-      } else {
-        toast.error("Passwords don't matches");
-      }
+
+          toast.success(res.data.message);
+        })
+        .catch((err) => {
+          setFormData({
+            ...formData,
+            username: "",
+            email: "",
+            password1: "",
+            password2: "",
+            textChange: "Daftar",
+          });
+          console.log(err.response);
+          toast.error(err.response);
+        });
     } else {
       toast.error("Please fill all fields");
     }
@@ -85,19 +81,11 @@ const Register = () => {
           <ToastContainer />
           <Form onSubmit={handleSubmit}>
             <Form.Field>
-              <label>Username </label>
+              <label>Username / Email </label>
               <input
                 placeholder="Username"
                 onChange={handleChange("username")}
                 value={username}
-              />
-            </Form.Field>
-            <Form.Field>
-              <label>Email</label>
-              <input
-                placeholder="Email"
-                onChange={handleChange("email")}
-                value={email}
               />
             </Form.Field>
             <Form.Field>
@@ -106,23 +94,17 @@ const Register = () => {
                 placeholder="Password"
                 onChange={handleChange("password1")}
                 value={password1}
+                type="password"
               />
-            </Form.Field>
-            <Form.Field>
-              <label>Confrim Password</label>
-              <input
-                placeholder="Confrim Password"
-                onChange={handleChange("password2")}
-                value={password2}
-              />
-            </Form.Field>
-            <Form.Field>
-              <Checkbox label="I agree to the Terms and Conditions" />
             </Form.Field>
             <Button type="submit">
               <span className="ml-3">{textChange}</span>
             </Button>
           </Form>
+          <span>
+            <br />
+            Belum punya akun ? <a href="/daftar">Daftar disini</a>
+          </span>
         </div>
       </div>
     </>
