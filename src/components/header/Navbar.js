@@ -1,7 +1,5 @@
 import React from "react";
 import sato from "../../assets/img/sato.png";
-import iconphone from "../../assets/img/1.png";
-import iconshop from "../../assets/img/4.png";
 import { Container, Search, Grid, Icon, Button } from "semantic-ui-react";
 import _ from "lodash";
 
@@ -59,23 +57,12 @@ const Navbar = () => {
   }, []);
   return (
     <div className="headerNav">
-      <div className="item-header-1 d-flex justify-content-betwen align-items-center">
-        <div className="d-flex align-items-center">
-          <img className="mr-2" src={iconphone} alt="" />
-          <span>Mobile Site</span>
-        </div>
-
-        <div className="d-flex">
-          <span className="mr-4">Tentang Sato</span>
-          <span className="mr-4">Tentang Sato</span>
-          <span className="mr-4">Tentang Sato</span>
-          <span className="mr-4">Tentang Sato</span>
-        </div>
-      </div>
       <Container>
         <div className="item-header-2 d-flex flex-column">
           <div className="d-flex justify-content-between align-items-center">
-            <img className="img-sato mr-3" src={sato} alt="Sato" />
+            <a href="/">
+              <img className="img-sato mr-3" src={sato} alt="Sato" />
+            </a>
             <Grid>
               <Grid.Column width={8}>
                 <Search
@@ -100,8 +87,9 @@ const Navbar = () => {
               </Button.Content>
             </Button>
             <span className="mr-3 line">|</span>
-            <button className="btn-auth">Masuk</button>
-            <button className="btn-auth">Daftar</button>
+            <a href="/daftar">
+              <button className="btn-auth">Masuk / Daftar</button>
+            </a>
           </div>
         </div>
       </Container>

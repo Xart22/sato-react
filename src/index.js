@@ -5,17 +5,15 @@ import "react-toastify/dist/ReactToastify.css";
 
 import "./index.css";
 import App from "./App";
-import Register from "./render/Register";
+import Login from "./page/Login";
+import Daftar from "./page/Daftar";
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path="/" exact render={(props) => <App {...props} />} />
-      <Route
-        path="/register"
-        exact
-        render={(props) => <Register {...props} />}
-      />
+      <Route path="/login" exact render={(props) => <Login {...props} />} />
+      <Route path="/daftar" exact render={(props) => <Daftar {...props} />} />
     </Switch>
   </BrowserRouter>,
   document.getElementById("main")

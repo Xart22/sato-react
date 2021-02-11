@@ -11,24 +11,6 @@
   font-size: 12px;
 }
 
-.item-header-1 {
-  padding: 8px 32px;
-  background-color: #f4f4f4;
-}
-
-.headerNav .item-header-1 span {
-  color: #929292;
-}
-
-.headerNav .item-header-1 span:hover {
-  color: #68bb69;
-  cursor: pointer;
-}
-
-.headerNav .item-header-1 img {
-  width: 14px;
-}
-
 .item-header-2 {
   padding: 8px 26px;
   background-color: #68bb69;
@@ -78,11 +60,12 @@
 }
 .btn-auth {
   border: 1px solid whitesmoke;
-  padding: 10px;
-  border-radius: 10%;
+  padding: 15px;
+  border-radius: 15%;
   background-color: #68bb69;
   width: 6rem;
   color: white !important;
+  width: fit-content;
 }
 .btn-auth:hover {
   background-color: whitesmoke;
@@ -92,24 +75,15 @@
   background-color: #68bb69 !important;
   color: white !important;
 }
-
-.container-grid {
-  width: 100%;
-  height: 280px;
-  border: 1px solid black;
-  margin-top: 34px;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  align-items: center;
-}
 .sato-care {
   width: 350px;
   height: 270px;
 }
+
 .container-sato {
   text-align: center;
 }
-.grid-item button {
+.card-item button {
   color: white;
   background-color: #68bb69;
   padding: 12px;
@@ -117,21 +91,31 @@
   border: none;
 }
 
-.grid-item button:hover {
+.card-item button:hover {
   color: black;
 }
-
 .container-kategori {
-  width: 100%;
-  height: 280px;
-  border: 1px solid black;
-  margin-top: 34px;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  align-items: center;
-  background-color: #68bb69;
+  background-color: #aae1a2;
 }
-
+.container-kategori > div {
+  margin: 30px;
+  text-align: center;
+  background-color: #d4f0d0;
+  border-radius: 15%;
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  padding: 12px;
+}
+.kategori .card-item img:hover {
+  transform: rotateY(180deg);
+}
+.container-kategori > div:hover {
+  box-shadow: 5px 5px 5px 5px whitesmoke;
+}
+.kategori img {
+  width: 160px;
+}
 .content-product .header {
   text-align: center;
   margin-bottom: 5px;
@@ -163,4 +147,19 @@
 .content-product > div {
   margin: 14px !important;
   width: 190px !important;
+}
+.container-form {
+  background-color: white;
+  width: 20%;
+  padding: 20px;
+}
+.container-body {
+  margin-top: 11rem;
+  padding: 50px;
+}
+.container-body img {
+  width: 760px;
+}
+.container-form button {
+  width: 100%;
 }
